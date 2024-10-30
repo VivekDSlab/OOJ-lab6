@@ -1,0 +1,60 @@
+import java.util.*;
+abstract class Shape {
+    protected int h;
+    protected int r;
+
+    public Shape(int h, int r) {
+        this.h = h;
+        this.r = r;
+    }
+
+    public abstract void printArea();
+}
+
+class Rectangle extends Shape {
+    public Rectangle(int width, int height) {
+        super(width, height);
+    }
+
+    @Override
+    public void printArea() {
+        int area = h * r;
+        System.out.println("Area of Rectangle: " + area);
+    }
+}
+
+class Triangle extends Shape {
+    public Triangle(int base, int height) {
+        super(base, height);
+    }
+
+    @Override
+    public void printArea() {
+        double area = 0.5 * h * r;
+        System.out.println("Area of Triangle: " + area);
+    }
+}
+
+class Circle extends Shape {
+    public Circle(int radius) {
+        super(radius, 0);
+    }
+
+    @Override
+    public void printArea() {
+        double area = 3.14 * h * h;
+        System.out.println("Area of Circle: " + area);
+    }
+}
+
+public class ShapeAreaCalculator {
+    public static void main(String[] args) {
+        Shape rectangle = new Rectangle(5, 10);
+        Shape triangle = new Triangle(5, 10);
+        Shape circle = new Circle(10);
+
+        rectangle.printArea();
+        triangle.printArea();
+        circle.printArea();
+    }
+}
